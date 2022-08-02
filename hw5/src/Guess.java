@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Guess {
     private static int maxNumber = 100;
+    private static Random r = new Random();
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
         introduceGame();
@@ -13,7 +15,7 @@ public class Guess {
         while(toPlay) {
 
             System.out.println("I'm thinking of a number between 1 and " + maxNumber + "...");
-            int numOfGuesses = playOneGame();
+            int numOfGuesses = playOneGame(r);
             gameCount++;
             totalGuesses += numOfGuesses;
             if (numOfGuesses < bestGame)
@@ -28,7 +30,7 @@ public class Guess {
 
     public static boolean toPlayAgain() {
 
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.print("Do you want to play again? ");
         String userResponse = scanner.next().toLowerCase();
         System.out.println();
@@ -50,15 +52,14 @@ public class Guess {
 
     }
 
-    public static int playOneGame() {
+    public static int playOneGame(Random r) {
 
-        Random r = new Random();
         int answer = r.nextInt(maxNumber) + 1;
         // int answer = 42;
-        // System.out.println("Answer: " + answer); // to be removed on deployment
+         System.out.println("Answer: " + answer); // to be removed on deployment
         int guess = -1; // priming the loop
         int guessCount = 0;
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         while (answer != guess) {
 
             guessCount++;
