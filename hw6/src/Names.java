@@ -103,10 +103,7 @@ public class Names {
 
     public static String readToken(Scanner lineInput) {
 
-        if (lineInput.hasNext()) {
-            return lineInput.next();
-        }
-        return "";
+        return lineInput.hasNext() ? lineInput.next() : "";
     }
 
     public static int calYPos(int rank) {
