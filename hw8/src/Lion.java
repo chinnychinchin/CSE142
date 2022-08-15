@@ -4,9 +4,9 @@ import java.util.Random;
 public class Lion extends Critter {
 
     private long stepCount;
-    private Color[] possibleColors = {Color.RED, Color.GREEN, Color.BLUE};
+    private static final Color[] possibleColors = {Color.RED, Color.GREEN, Color.BLUE};
     private Color color;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public Lion() {
         this.stepCount = 0; // for clarity's sake. If not here, stepCount will be auto initialized to 0

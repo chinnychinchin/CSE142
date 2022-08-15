@@ -4,7 +4,7 @@ public class Giant extends Critter {
 
     private long stepCount;
     private String displayName;
-    private String[] possibleDisplayNames = {"fee","fie","foe","fum"};
+    private static final String[] possibleDisplayNames = {"fee","fie","foe","fum"};
 
     public Color getColor() {return Color.GRAY; }
 
